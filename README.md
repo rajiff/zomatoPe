@@ -1,30 +1,35 @@
 Restaurant search app
 
-## Step 1
+## Step 1 - App with App Shell
 - Basic React.js app
 - Enable
 	- Material UI
 	- React Routes
 
-## Step 2
-- Add Redux store
+## Step 2 - Redux
+- Add Redux store, actions and reducers
 - Wrap routes for Redux Store synching
 
-## Step 3 (step1-sw)
+## Step 3 - Service Worker (workbox)
 - Service Worker Registration
 - Handle lifecycle events
+- Precache
 - Add offline indication
 
-## Step 4 (step2-sw)
+## Step 4 - Cache
 - App shell
-- Caching (Pre caching, Caching dynamic data)
+- Dynamic content caching
+- Caching strategies
 
-## Step 5 (spt3-sw)
+## Step 5 - Native Experience
 - Manifest
-- Native experience
+- App Icon
+- Splash screen
 
-## Step 6 (step4-sw)
-- Push notification
+## Step 6 - Push
+- Push notifications
+
+## Step 7 - Background Sync
 - Background sync
 
 ### Resources
