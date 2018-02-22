@@ -1,6 +1,6 @@
 {
-  "name": "Restaurant Diner",
-  "short_name": "Diner",
+  "name": "zomatope - restaurant browser using zomato",
+  "short_name": "ZomatoPE",
   "theme_color": "#8e24aa",
   "background_color": "#eeeeee",
   "display": "standalone",

@@ -16,7 +16,7 @@ export default class AppHeader extends React.Component {
   render() {
     return (
       <AppBar
-        title={"Diner"}
+        title={"ZomatoPE"}
         iconElementRight={<IconButton><ActionAccountCircle /></IconButton>}
         />
     );

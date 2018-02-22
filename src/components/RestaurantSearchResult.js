@@ -93,7 +93,7 @@ export default class RestaurantSearchResult extends Component {
 	  						(this.props.isSearchInProgress ) ?
 	  							this.getProgressBlock()
 	  						:
-	  						( (this.props.searchResult.restaurants.length <=0 ) ? <PlaceHolder message='search for best dining experience..!'/> : '' )
+	  						( (this.props.searchResult.restaurants.length <=0 ) ? <PlaceHolder message='Search your next awesome dining experience'/> : '' )
 	  				}
 	  			</Col>
 	  			<Col xs={12}>
