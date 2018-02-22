@@ -1,0 +1,22 @@
+.restaurants {
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+.restaurantItem {
+    flex: 1 0 500px;
+    box-sizing: border-box;
+    margin: 1rem .25em;
+}
+
+@media screen and (min-width: 40em) {
+    .restaurantItem {
+       max-width: calc(50% -  1em);
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .restaurantItem {
+        max-width: calc(25% - 1em);
+    }
+}
