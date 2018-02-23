@@ -1,4 +1,10 @@
-Restaurant search app
+## Restaurant search app
+Uses zomato's API (limited calls)
+
+### How to build
+1. `clone`
+2. `yarn`
+3. `yarn run build && yarn run serve`
 
 ## Step 1 - App with App Shell
 - Basic React.js app
