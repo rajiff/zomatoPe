@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "http-server": "^0.11.1",
     "material-design-icons": "^3.0.1",
     "material-ui": "^0.20.0",
     "moment": "^2.20.1",
@@ -14,15 +15,16 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "superagent": "^3.8.2",
-    "workbox-cli": "^2.1.2",
-    "workbox-sw": "^2.1.2"
+    "workbox": "^0.0.0",
+    "workbox-cli": "^3.2.0"
   },
   "scripts": {
-    "serve": "http-server ./build/ -p 4080",
+    "serve": "./node_modules/.bin/http-server ./build/ -a localhost -p 4080",
     "start": "PORT=4080 react-scripts start",
-    "build": "react-scripts build && workbox inject:manifest && cp node_modules/workbox-sw/build/importScripts/workbox-sw.prod.v2.1.2.js ./build/ && cp src/manifest.json ./build/manifest.json && cp -r ./images build/",
-    "swbuild": "workbox generate:sw",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "workbox": "./node_modules/.bin/workbox"
+  },
+  "devDependencies": {}
 }
