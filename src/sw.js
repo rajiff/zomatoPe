@@ -1,6 +1,7 @@
-importScripts('workbox-sw.prod.v2.1.2.js');
-const workboxSW = new WorkboxSW();
-workboxSW.precache([]);
+// Copy this manually to generated sw.js
+
+workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 self.addEventListener('install', function (event) {
   console.log('%c ServiceWorker installation successful', 'color: #FF00ff');
@@ -12,37 +13,28 @@ self.addEventListener('activate', function(event) {
   event.waitUntil(self.clients.claim());
 });
 
-/*self.addEventListener('fetch', function(event) {
-	console.log('ServiceWorker fetch event invoked');
-  event.respondWith(fetch(event.request));
-});*/
-
-workboxSW.router.registerRoute(/.*(?:googleapis|gstatic)\.com.*$/,
-  workboxSW.strategies.cacheFirst({
+workbox.routing.registerRoute(
+  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+  workbox.strategies.cacheFirst({
     cacheName: 'googleapis',
-    cacheExpiration: {
-      maxEntries: 30
-    },
-    cacheableResponse: {statuses: [0, 200]}
-  })
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30,
+      }),
+    ],
+  }),
 );
 
-workboxSW.router.registerRoute(/.*api\/v2.1\/search*/,
-  workboxSW.strategies.cacheFirst({
-    cacheName: 'dycache',
-    cacheExpiration: {
-      maxEntries: 30
-    },
-    cacheableResponse: {statuses: [0, 200]}
-  })
+
+workbox.routing.registerRoute(
+  new RegExp(/.*api\/v2.1*/),
+  workbox.strategies.cacheFirst({
+    cacheName: 'api_cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30,
+      }),
+    ],
+  }),
 );
 
-workboxSW.router.registerRoute(/.*api\/v2.1\/restaurant*/,
-  workboxSW.strategies.networkFirst({
-    cacheName: 'dycache',
-    cacheExpiration: {
-      maxEntries: 30
-    },
-    cacheableResponse: {statuses: [0, 200]}
-  })
-);

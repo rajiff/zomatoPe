@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "workbox": "./node_modules/.bin/workbox"
+    "workbox": "./node_modules/.bin/workbox",
+    "swwizard": "./node_modules/.bin/workbox wizard"
   },
   "devDependencies": {}
 }
