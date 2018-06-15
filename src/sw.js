@@ -1,8 +1,5 @@
 // Copy this manually to generated sw.js
 
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-
 self.addEventListener('install', function (event) {
   console.log('%c ServiceWorker installation successful', 'color: #FF00ff');
   event.waitUntil(self.skipWaiting());
